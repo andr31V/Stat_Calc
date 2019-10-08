@@ -2,6 +2,7 @@ library(shiny)
 library(shinydashboard)
 library(shinyjs)
 
+#rsconnect::deployApp("/home/andr31/R/github/Stat_Calc")
 
 dashboardPage(
   dashboardHeader(title = "Statistical Sampling"),

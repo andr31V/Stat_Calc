@@ -43,7 +43,7 @@ output$propPlot <- renderPlot({
   
   df <- data.frame(
     x=c(seq(0,1,by=.01)),
-    y=sapply(c(seq(0,100,by=1)),sample,conf=conf,marg=marg,popu=popu)
+    y=sapply(c(seq(0,100,by=1)),sample,conf=input$confidence,marg=input$margin,popu=input$pop)
     ) %>% 
     ggplot(aes(x,y,colour=y)) +
     geom_point() +
@@ -67,7 +67,7 @@ output$confPlot <- renderPlot({
   
   df <- data.frame(
     x=c(seq(.9,.99,by=.0005)),
-    y=sapply(c(seq(90,99,by=.05)),sample,prop=prop,marg=marg,popu=popu) 
+    y=sapply(c(seq(90,99,by=.05)),sample,prop=input$bad,marg=input$margin,popu=input$pop) 
   ) %>% 
     ggplot(aes(x,y,colour=y)) +
     geom_point() +
@@ -89,7 +89,7 @@ output$margPlot <- renderPlot({
   
   df  <- data.frame(
     x=c(seq(.01,.05,by=.001)),
-    y=sapply(c(seq(1,5,by=.1)),sample,prop=prop,conf=conf,popu=popu) 
+    y=sapply(c(seq(1,5,by=.1)),sample,prop=input$bad,conf=input$confidence,popu=input$pop) 
   ) %>% 
     ggplot(aes(x,y,colour=y)) +
     geom_point() +
