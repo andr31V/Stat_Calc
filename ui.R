@@ -12,7 +12,7 @@ dashboardPage(
                 min = 0, max = 50, value = 10, step = 5
     ),
     sliderInput("confidence", "% Level of Confidence",
-                min = 90, max = 99, value = 90, step = 1
+                min = 51, max = 99, value = 90, step = 1
     ),
     sliderInput("margin", "% Margin of Error",
                 min = 1, max = 5, value = 2, step = 1
@@ -20,6 +20,7 @@ dashboardPage(
   ),
   dashboardBody(
     column(12,"*Calculator for Discrete Variables"),
+    column(12,"**FPC Embedded"),
               fluidRow(
                 column(8,h3(HTML("<b>Required Sample Size:</b>"),textOutput("text")))
               ),

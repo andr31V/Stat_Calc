@@ -66,8 +66,8 @@ output$propPlot <- renderPlot({
 output$confPlot <- renderPlot({
   
   df <- data.frame(
-    x=c(seq(.9,.99,by=.0005)),
-    y=sapply(c(seq(90,99,by=.05)),sample,prop=input$bad,marg=input$margin,popu=input$pop) 
+    x=c(seq(.51,.99,by=.001)),
+    y=sapply(c(seq(51,99,by=.1)),sample,prop=input$bad,marg=input$margin,popu=input$pop) 
   ) %>% 
     ggplot(aes(x,y,colour=y)) +
     geom_point() +
@@ -107,4 +107,8 @@ output$margPlot <- renderPlot({
   df_err
 })
 
-}
+  }
+  
+  #library(rsconnect)
+  #rsconnect::deployApp("/home/andr31/R/github/Stat_Calc")
+  
